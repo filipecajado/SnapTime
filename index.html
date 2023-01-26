@@ -5,69 +5,77 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Ubuntu:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
   <title>Snaptime</title>
 </head>
 
 <body>
 
   <!-- Header -->
-  <header>
+  <header class="header">
     <!-- Input Search -->
-    <div>
-      <input type="text" placeholder="Temperatura de qual cidade?">
-      <button>
-        <img src="#" alt="icone de uma lupa">
+    <div class="header_city-search-bar">
+      <input class="header_input" type="text" placeholder="Temperatura de qual cidade?">
+      <button class="header_button">
+        <img class="header_button_icon" src="./assets/imagem/search-icon.svg" alt="icone de uma lupa">
       </button>
     </div>
     <!-- End input Search -->
 
-    <div>...</div>
-    <div>...</div>
+    <div class="header_current-date">Hoje, 24 de janeiro</div>
+    <div class="header_city-name">Espírito Santo</div>
 
   </header>
   <!-- End Header -->
 
   <!-- Imagem do Tempo com Temperatura -->
-  <section>
-    <img src="#" alt="">
-    <div>...</div>
-    <div>Tempo Agora</div>
-    <div>...</div>
+  <section class="current-temperature">
+    <img class="current-temperature_weather-icon" src="./assets/imagem/loading-icon.svg" alt="Imagem do Clima">
+    <div class="current-temperature_description">Nublado</div>
+    <div class="current-temperature_info-label">Tempo Agora</div>
+    <div class="current-temperature_current-temperature">25°</div>
   </section>
   <!-- End Imagem do tempo com Temperatura -->
 
   <!-- Containers -->
-  <div>
+  <div class="bottom-container">
 
     <!-- Container Vento Umidade e Sensação -->
-    <section>
-      <div>
-        <div>Vento</div>
-        <div>...</div>
+    <section class="temperature-details">
+      <div class="temperature-details-item">
+        <div class="temperature-details-label">Vento</div>
+        <div class="temperature-details-value">30km</div>
       </div>
 
-      <div>
-        <div>Sensação</div>
-        <div>...</div>
+      <div class="temperature-details-item">
+        <div class="temperature-details-label">Sensação</div>
+        <div class="temperature-details-value">25°</div>
       </div>
 
-      <div>
-        <div>Umidade</div>
-        <div>...</div>
+      <div class="temperature-details-item">
+        <div class="temperature-details-label">Umidade</div>
+        <div class="temperature-details-value">84%</div>
       </div>
     </section>
     <!-- End Container Vento Umidade e Sensação -->
 
     <!-- Container Nascer e Por do Sol -->
-    <section>
-      <div>
-        <img src="#" alt="Nascer do Sol">
-        <div>...</div>
+    <section class="sunset-sunrise">
+      <div class="sunset-sunrise_item">
+        <img class="sunset-sunrise_icon" src="./assets/imagem/sunrise.svg" alt="Nascer do Sol">
+        <div class="sunset-sunrise_value">5:39</div>
       </div>
 
-      <div>
-        <img src="#" alt="Por do Sol">
-        <div>...</div>
+      <div class="sunset-sunrise_item">
+        <img class="sunset-sunrise_icon" src="./assets/imagem/sunset.svg" alt="Por do Sol">
+        <div class="sunset-sunrise_value">18:57</div>
       </div>
       <!-- End Container Nascer e Por do Sol -->
     </section>
