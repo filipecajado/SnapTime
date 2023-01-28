@@ -17,8 +17,7 @@ const currentHumidity = document.getElementById('current-humidity');
 const sunriseTime = document.getElementById('sunrise-time');
 const sunsetTime = document.getElementById('sunset-time');
 
-//const api_key = '13eb038e5db4c309e53a9e73d6a19b48'
-const api_key = '01061493be940f2efaba9a9f040b88a7'
+const api_key = '13eb038e5db4c309e53a9e73d6a19b48'
 
 citySearchButton.addEventListener('click', () => {
 
@@ -32,9 +31,8 @@ navigator.geolocation.getCurrentPosition((position) => {
   let lat = position.coords.latitude
   let lon = position.coords.longitude
 
-  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=pt_BR&appid=${api_key}`)
-    .then((response) => response.json())
-    .then((data) => displayWeather(data))
+  getCurrentLocationWeather(lat, lon)
+
 },
   (err) => {
     if (err.code === 1) {
@@ -45,6 +43,11 @@ navigator.geolocation.getCurrentPosition((position) => {
   }
 )
 
+function getCurrentLocationWeather(lat, lon) {
+  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=pt_BR&appid=${api_key}`)
+    .then((response) => response.json())
+    .then((data) => displayWeather(data))
+}
 
 function getCityWeather(cityName) {
 
@@ -72,7 +75,7 @@ function displayWeather(data) {
   currentTemperature.textContent = `${Math.round(temp)}°C`;
   windSpeed.textContent = `${Math.round(speed * 3.6)}km`;
   feelsLikeTemperature.textContent = `${Math.round(feels_like)}°C`;
-  currentHumidity.textContent = humidity;
+  currentHumidity.textContent = `${humidity}%`;
   sunriseTime.textContent = formatTime(sunrise);
   sunsetTime.textContent = formatTime(sunset);
 
