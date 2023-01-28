@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,46 +22,47 @@
   <header class="header">
     <!-- Input Search -->
     <div class="header_city-search-bar">
-      <input class="header_input" type="text" placeholder="Temperatura de qual cidade?">
-      <button class="header_button">
+      <input id="city-search-input" class="header_input" type="text" placeholder="Temperatura de qual cidade?">
+      <button class="header_button" id="city-search-button">
         <img class="header_button_icon" src="./assets/imagem/search-icon.svg" alt="icone de uma lupa">
       </button>
     </div>
     <!-- End input Search -->
 
-    <div class="header_current-date">Hoje, 24 de janeiro</div>
-    <div class="header_city-name">Espírito Santo</div>
+    <div class="header_current-date" id="current-date">...</div>
+    <div class="header_city-name" id="city-name">...</div>
 
   </header>
   <!-- End Header -->
 
   <!-- Imagem do Tempo com Temperatura -->
   <section class="current-temperature">
-    <img class="current-temperature_weather-icon" src="./assets/imagem/loading-icon.svg" alt="Imagem do Clima">
-    <div class="current-temperature_description">Nublado</div>
+    <img class="current-temperature_weather-icon" id="weather-icons" src="./assets/imagem/loading-icon.svg"
+      aria-hidden="true" alt="Icone que ilustra do clima atual">
+    <div class="current-temperature_description" id="weather-description">...</div>
     <div class="current-temperature_info-label">Tempo Agora</div>
-    <div class="current-temperature_current-temperature">25°</div>
+    <div class="current-temperature_current-temperature" id="current-temperature">...</div>
   </section>
   <!-- End Imagem do tempo com Temperatura -->
 
-  <!-- Containers -->
+  <!-- Containers Fotter -->
   <div class="bottom-container">
 
     <!-- Container Vento Umidade e Sensação -->
     <section class="temperature-details">
       <div class="temperature-details-item">
         <div class="temperature-details-label">Vento</div>
-        <div class="temperature-details-value">30km</div>
+        <div class="temperature-details-value" id="wind-speed">...</div>
       </div>
 
       <div class="temperature-details-item">
         <div class="temperature-details-label">Sensação</div>
-        <div class="temperature-details-value">25°</div>
+        <div class="temperature-details-value" id="feels-like-temperature">...</div>
       </div>
 
       <div class="temperature-details-item">
         <div class="temperature-details-label">Umidade</div>
-        <div class="temperature-details-value">84%</div>
+        <div class="temperature-details-value" id="current-humidity">...</div>
       </div>
     </section>
     <!-- End Container Vento Umidade e Sensação -->
@@ -70,17 +71,20 @@
     <section class="sunset-sunrise">
       <div class="sunset-sunrise_item">
         <img class="sunset-sunrise_icon" src="./assets/imagem/sunrise.svg" alt="Nascer do Sol">
-        <div class="sunset-sunrise_value">5:39</div>
+        <div class="sunset-sunrise_value" id="sunrise-time">...</div>
       </div>
 
       <div class="sunset-sunrise_item">
         <img class="sunset-sunrise_icon" src="./assets/imagem/sunset.svg" alt="Por do Sol">
-        <div class="sunset-sunrise_value">18:57</div>
+        <div class="sunset-sunrise_value" id="sunset-time">..</div>
       </div>
       <!-- End Container Nascer e Por do Sol -->
     </section>
   </div>
-  <!-- End Containers -->
+  <!-- End Containers Fotter-->
+
+
+  <script src="./assets/js/app.js"></script>
 
 </body>
 
